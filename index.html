@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MLNation - Mobile Legends Guide</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css"/>
+  <style>
+    body {
+      background-color: #0a0a1a;
+      color: #fff;
+      font-family: Arial, sans-serif;
+    }
+    .navbar {
+      background-color: #1e1e3f;
+    }
+    .navbar-brand {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #f8b400 !important;
+      display: flex;
+      align-items: center;
+    }
+    .navbar-brand .highlight {
+      color: #ccc;
+    }
+    .navbar-logo {
+      height: 50px;
+      width: auto;
+      margin-right: 15px;
+    }
+    .brand-container {
+      display: flex;
+      align-items: center;
+    }
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+    }
+    .tagline {
+      font-size: 0.9rem;
+      color: #ccc;
+      margin-top: -5px;
+    }
+    .navbar-toggler {
+      border-color: white;
+    }
+    .navbar-toggler-icon {
+      filter: invert(1);
+    }
+    .navbar-collapse {
+      background-color: #1a1a33;
+      padding: 10px;
+      border-radius: 10px;
+    }
+    .nav-link {
+      color: #e0e0e0 !important;
+      transition: color 0.3s ease, background-color 0.3s ease;
+      border-radius: 10px;
+      padding: 8px 12px;
+    }
+    .nav-link:hover,
+    .nav-link:focus,
+    .nav-link:active {
+      background-color: #2a2a4f;
+      color: #f8b400 !important;
+    }
+    .carousel-inner {
+      overflow: hidden;
+    }
+    .carousel-item img {
+      border-radius: 10px;
+      transition: transform 4s ease;
+    }
+    .carousel-item.active img {
+      transform: scale(1.05);
+    }
+    .card {
+      background-color: #1a1a33;
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    }
+    .card img {
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+    .card-body {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .btn-primary {
+      background-color: #f8b400;
+      border: none;
+    }
+    .btn-primary:hover {
+      background-color: #d99a00;
+    }
+    .section-title {
+      text-align: center;
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #f8b400;
+      margin: 40px 0 20px;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #1e1e3f;
+      color: #fff;
+      margin-top: 40px;
+    }
+    #backToTopBtn {
+    position: fixed;
+    bottom: 30px;
+    right: 20px;
+    z-index: 99;
+    font-size: 20px;
+    background-color:#f8b400ff;
+    color:white;
+    border: none;
+    outline: none;
+    padding: 12px 16px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    box-shadow: 0 4px 12px rgba(121, 184, 255, 0.5);
+    transition: transform 0.3s ease;
+}
+#backToTopBtn:hover {
+    transform: scale(1.1);
+    background-color: #a6d2ff;
+}
+
+    
+  </style>
+</head>
+<body> 
+
+  <!-- Ling Modal -->
+<div class="modal fade" id="lingModal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content bg-dark text-white">
+      <div class="modal-header">
+        <h5 class="modal-title">Ling - Skills & Description</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <p><strong>Description:</strong> Ling is a high-mobility assassin who can traverse walls and eliminate targets swiftly.</p>
+        <ul>
+          <li><strong>Passive:</strong> Cloud Walker - Gains extra crit chance and energy regen on walls.</li>
+          <li><strong>Skill 1:</strong> Finch Poise - Climbs walls to reposition quickly.</li>
+          <li><strong>Skill 2:</strong> Defiant Sword - Dashes and deals crit damage.</li>
+          <li><strong>Ultimate:</strong> Tempest of Blades - AoE slash, slows, and resets cooldowns.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Lancelot Modal -->
+<div class="modal fade" id="lancelotModal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content bg-dark text-white">
+      <div class="modal-header">
+        <h5 class="modal-title">Lancelot - Skills & Description</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <p><strong>Description:</strong> Lancelot is an assassin known for burst damage and graceful dashes.</p>
+        <ul>
+          <li><strong>Passive:</strong> Soul Cutter - Increases damage dealt to enemies with his skills.</li>
+          <li><strong>Skill 1:</strong> Puncture - Dash through enemies, marking them.</li>
+          <li><strong>Skill 2:</strong> Thorned Rose - AoE burst in a triangle area.</li>
+          <li><strong>Ultimate:</strong> Phantom Execution - Charge and slash enemies in a line.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Esmeralda Modal -->
+<div class="modal fade" id="esmeraldaModal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content bg-dark text-white">
+      <div class="modal-header">
+        <h5 class="modal-title">Esmeralda - Skills & Description</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <p><strong>Description:</strong> Esmeralda is a tank/mage who absorbs enemy shields while sustaining damage.</p>
+        <ul>
+          <li><strong>Passive:</strong> Starmoon Casket - Converts enemy shields into her own HP.</li>
+          <li><strong>Skill 1:</strong> Frostmoon Shield - Gains shield and movement speed.</li>
+          <li><strong>Skill 2:</strong> Stardust Dance - AoE damage with each swing.</li>
+          <li><strong>Ultimate:</strong> Falling Starmoon - Jumps and slams for massive AoE damage.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container d-flex align-items-center justify-content-between">
+      <div class="d-flex align-items-center">
+        <img src="logo.png" alt="Logo" class="navbar-logo" />
+        <div class="brand-text">
+          <a class="navbar-brand" href="#">ML<span class="highlight">NATION</span></a>
+          <span class="tagline">Guides For Mobile Legends Gamers</span>
+        </div>
+      </div>
+      <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end ms-3" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="#">HOME</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">ABOUT US</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">CONTACT US</a></li>
+          <li class="nav-item"><a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">LOGIN</a></li>
+          <li class="nav-item"><a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#signupModal">SIGN UP</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- Back to Top Toggle Button -->
+<button onclick="scrollToTop()" id="backToTopBtn" title="Go to top">↑</button>
+
+<script>
+    // Show/hide button on scroll
+    window.onscroll = function () {
+        const btn = document.getElementById("backToTopBtn");
+        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+            btn.style.display = "block";
+        } else {
+            btn.style.display = "none";
+        }
+    };
+
+    // Scroll to top smoothly
+    function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+</script>
+
+
+  <!-- Carousel -->
+  <div id="carouselExample" class="carousel slide mt-4" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="slide1.jpg" class="d-block w-100" alt="Slide 1" />
+      </div>
+      <div class="carousel-item">
+        <img src="slide2.jpg" class="d-block w-100" alt="Slide 2" />
+      </div>
+      <div class="carousel-item">
+        <img src="slide3.jpg" class="d-block w-100" alt="Slide 3" />
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+  </div>
+
+  <!-- Top Hero Picks -->
+  <div class="container mt-5">
+    <h2 class="section-title">Top Hero Picks</h2>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      <div class="col">
+        <div class="card h-100">
+          <img src="Ling.jpg" class="card-img-top" alt="Hero 1" />
+          <div class="card-body">
+            <h5 class="card-title">Ling</h5>
+            <p class="card-text">Fast, agile, and deadly — dominate the map with high mobility.</p>
+<a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#lingModal">Learn More</a>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100">
+          <img src="Lancelot.jpg" class="card-img-top" alt="Hero 2" />
+          <div class="card-body">
+            <h5 class="card-title">Lancelot</h5>
+            <p class="card-text">A master assassin with burst potential and invincible dashes.</p>
+<a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#lancelotModal">Learn More</a>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100">
+          <img src="Esmeralda.jpg" class="card-img-top" alt="Hero 3" />
+          <div class="card-body">
+            <h5 class="card-title">Esmeralda</h5>
+            <p class="card-text">Sustain and damage in one — perfect for outlasting enemies.</p>
+<a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#esmeraldaModal">Learn More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- About -->
+<section id="about" class="mt-5">
+  <div class="container">
+    <h2 class="section-title">About Us</h2>
+    <div class="text-center mb-4">
+      <p class="mb-0">"Victory is not just about strength, but about strategy, teamwork, and passion."</p>
+      </blockquote>
+    </div>
+    <div class="row text-center text-md-start">
+      <!-- History -->
+      <div class="col-md-6 mb-4">
+        <h4 class="text-warning">Our History</h4>
+        <p>Founded in 2020, MLNation began as a small community of passionate Mobile Legends players. Over the years, we've grown into a trusted platform for players of all levels, offering resources, strategies, and guides to improve gameplay. Our commitment to supporting the community has helped us become a go-to hub for Mobile Legends enthusiasts worldwide.</p>
+      </div>
+      <!-- Core Values -->
+      <div class="col-md-6 mb-4">
+        <h4 class="text-warning">Core Values</h4>
+        <ul class="list-unstyled">
+          <li><strong>Community</strong> - We believe in the power of community and the importance of collaboration and support among players.</li>
+          <li><strong>Integrity</strong> - We maintain honesty and fairness in all our interactions and content.</li>
+          <li><strong>Excellence</strong> - We strive to provide the best resources, guides, and strategies for our users to help them achieve their full potential.</li>
+          <li><strong>Innovation</strong> - We're always adapting and evolving with the game, ensuring we stay ahead with the latest strategies and trends.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="row text-center text-md-start">
+      <!-- Philosophy -->
+      <div class="col-md-6 mb-4">
+        <h4 class="text-warning">Our Philosophy</h4>
+        <p>At MLNation, we believe that success in Mobile Legends is not solely about individual skill, but about learning, adapting, and growing as a team. Our approach combines practical strategies with mental and emotional preparation to empower players to think strategically, communicate effectively, and play with passion.</p>
+      </div>
+      <!-- Mission & Vision -->
+      <div class="col-md-6 mb-4">
+        <h4 class="text-warning">Our Mission</h4>
+        <p>Our mission is to empower Mobile Legends players by providing them with updated strategies, comprehensive guides, and a supportive community. We aim to help players level up their game, from beginners to pros, and create an inclusive environment where every player can thrive.</p>
+        <h4 class="text-warning mt-4">Our Vision</h4>
+        <p>We envision a world where every Mobile Legends player has access to the resources, guidance, and support they need to improve and enjoy the game to its fullest. We strive to be the ultimate destination for all things Mobile Legends, uniting players with knowledge, tools, and a sense of belonging.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Contact Section -->
+<section id="contact" class="container mt-5 mb-5">
+  <h2 class="section-title text-center">Contact Us</h2>
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="p-4 rounded shadow" style="background-color: #51514fbb; text-align: center;">
+        <p><strong>Owner:</strong> seo</p>
+        <p><strong>Company Name:</strong> ML NATION</p>
+        <p><strong>Email:</strong> 
+          <a href="mailto:SEO@example.com" class="text-decoration-none text-dark">SEO@example.com</a>
+        </p>
+        <p><strong>Phone:</strong> 0912-345-6789</p>
+        <p><strong>Main Location:</strong><br>123 bagong silangan, QC CA 90210</p>
+        <p><strong>Branches:</strong></p>
+        <ul class="list-unstyled">
+          <li>SEO  – Downtown</li>
+          <li>SEO– East Side</li>
+          <li>SEO – Riverside Mall</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 MLNation - All Rights Reserved
+  </footer>
+
+  <!-- Login Modal -->
+  <div class="modal fade" id="loginModal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content bg-dark text-white">
+        <div class="modal-header">
+          <h5 class="modal-title">Login</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="mb-3">
+              <label for="loginEmail" class="form-label text-warning">Email</label>
+              <input type="email" class="form-control" id="loginEmail" placeholder="Enter email" />
+            </div>
+            <div class="mb-3">
+              <label for="loginPassword" class="form-label text-warning">Password</label>
+              <input type="password" class="form-control" id="loginPassword" placeholder="Enter password" />
+            </div>
+            <button type="submit" class="btn btn-primary">Login</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Signup Modal -->
+  <div class="modal fade" id="signupModal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content bg-dark text-white">
+        <div class="modal-header">
+          <h5 class="modal-title">Sign Up</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="mb-3">
+              <label for="signupName" class="form-label text-warning">Full Name</label>
+              <input type="text" class="form-control" id="signupName" placeholder="Enter name" />
+            </div>
+            <div class="mb-3">
+              <label for="signupEmail" class="form-label text-warning">Email</label>
+              <input type="email" class="form-control" id="signupEmail" placeholder="Enter email" />
+            </div>
+            <div class="mb-3">
+              <label for="signupPassword" class="form-label text-warning">Password</label>
+              <input type="password" class="form-control" id="signupPassword" placeholder="Create password" />
+            </div>
+            <button type="submit" class="btn btn-primary">Sign Up</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
